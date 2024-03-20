@@ -10,7 +10,7 @@
     "check-spelling": "cspell .",
     "format:fix": "prettier . --write",
     "format:check": "prettier . --check",
-    "pre-commit": "prettier . --write",
+    "pre-commit": "lint-staged --shell",
     "prepare": "husky"
   },
   "dependencies": {
@@ -29,6 +29,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
     "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "postcss": "^8",
     "prettier": "3.2.5",
     "tailwindcss": "^3.3.0",
