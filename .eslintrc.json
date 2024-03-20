@@ -3,9 +3,10 @@
     "import" // add the "eslint-plugin-import" plugin
   ],
   "extends": [
-    "next/core-web-vitals",
+    "eslint:recommended",
     "plugin:import/recommended", // for the recommended rule set
     "plugin:import/typescript", // for the typescript rule set
+    "next/core-web-vitals",
     "prettier"
   ],
   "rules": {
@@ -36,6 +37,15 @@
           "index", // <- index imports
           "unknown" // <- unknown
         ],
+        // make sure that the "react" import comes before any other external imports
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
         "newlines-between": "always",
         "alphabetize": {
           /* sort in ascending order. Options: ["ignore", "asc", "desc"] */
@@ -45,5 +55,9 @@
         }
       }
     ]
-  }
+  },
+  "reportUnusedDisableDirectives": true,
+  // Lint the lintstagedrc file - avoids the "File ignored by default" error.
+  // Otherwise, when next lint --file .lintstagedrc.js is run, it will throw an error because the file is ignored by default.
+  "ignorePatterns": ["!.lintstagedrc.js"]
 }

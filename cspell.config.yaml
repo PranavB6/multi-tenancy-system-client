@@ -13,6 +13,7 @@ dictionaries:
   - css
 words:
   - tailwindcss
+  - lintstagedrc
 ignoreWords: []
 import: []
 language: en
