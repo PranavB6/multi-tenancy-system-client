@@ -12,8 +12,9 @@ dictionaries:
   - html
   - css
 words:
-  - tailwindcss
+  - clsx
   - lintstagedrc
+  - tailwindcss
   - vercel
 ignoreWords: []
 import: []
